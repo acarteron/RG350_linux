@@ -13,7 +13,7 @@ struct top035 {
 };
 
 
-static int nt39016_panel_init(
+static int top035_panel_init(
 			      void **out_panel,
 			      struct device *dev,
 			      void *panel_pdata) {
