@@ -14,4 +14,9 @@ config PANEL_NV3052C
   bool "NV3052C based panel"
   help
     Select this if you are using a NV3052C LCD driver IC.
+config PANEL_TOP035
+  # TODO: Switch to tristate once the driver is a module.
+  bool "TOP035  panel"
+  help
+    Select this if you are using a TOP035 LCD panel.
 endmenu
