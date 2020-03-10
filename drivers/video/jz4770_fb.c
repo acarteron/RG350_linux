@@ -18,7 +18,7 @@
  */
 
 
-//#define USE_VGA_HACK
+#define USE_VGA_HACK
 #include <linux/module.h>
 #include <linux/kernel.h>
 #include <linux/spinlock.h>
@@ -114,7 +114,7 @@ static const struct jz_panel jz4770_lcd_panel = {
 		LCD_CFG_VSP,	/* Vsync polarity: leading edge is falling edge */
 	/* Took timing parameters from typical in datasheet
 	bw,  bh,  dw,  dh,  fclk, hsw, vsw, elw, blw, efw, bfw */
-	640, 380, 640, 480, 60,   2,   2,   44, 42,  16,  14,
+	640, 480, 640, 480, 60,   2,   2,   44, 42,  16,  14,
 };
 #endif
 struct jzfb {
