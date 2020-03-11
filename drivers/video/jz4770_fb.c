@@ -18,7 +18,6 @@
  */
 
 
-#define USE_VGA_HACK
 #include <linux/module.h>
 #include <linux/kernel.h>
 #include <linux/spinlock.h>
