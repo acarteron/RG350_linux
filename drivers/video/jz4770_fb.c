@@ -263,7 +263,7 @@ static int reduce_fraction(unsigned int *num, unsigned int *denom)
 	unsigned long d = gcd(*num, *denom);
 
 	/* The scaling table has only 31 entries */
-#ifdef USE_VGA_HACK
+#ifdef CONFIG_USE_VGA_HACK
 	if (*num > 40 * d)
 		return -EINVAL;
 
@@ -739,7 +739,7 @@ static void jzfb_ipu_configure(struct jzfb *jzfb)
 
 		outputH = fb->var.yres * numH / denomH;
 		outputW = fb->var.xres_virtual * numW / denomW;
-#ifdef USE_VGA_HACK
+#ifdef CONFIG_USE_VGA_HACK
 if (fb->var.xres == 368)
 {
 printk("TONY's magic\n");
