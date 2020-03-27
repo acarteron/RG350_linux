@@ -98,7 +98,7 @@
 #define LCD_CFG_REVP		(1 << 12) /* REV pin reset state */
 #define LCD_CFG_HSP		(1 << 11) /* HSYNC polarity:0-active high,1-active low */
 #define LCD_CFG_PCP		(1 << 10) /* PCLK polarity:0-rising,1-falling */
-#define LCD_CFG_DEP		(1 << 9)  /* DE polarity:0-active high,1-active low */
+#define LCD_CFG_DEP		(0 << 9)  /* DE polarity:0-active high,1-active low */
 #define LCD_CFG_VSP		(1 << 8)  /* VSYNC polarity:0-rising,1-falling */
 #define LCD_CFG_MODE_TFT_18BIT 	(1 << 7)  /* 18bit TFT */
 #define LCD_CFG_MODE_TFT_16BIT 	(0 << 7)  /* 16bit TFT */

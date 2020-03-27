@@ -108,12 +108,14 @@ static const struct jz_panel jz4770_lcd_panel = {
 	.cfg = LCD_CFG_LCDPIN_LCD | LCD_CFG_RECOVER |	/* Underrun recover */
 		LCD_CFG_MODE_GENERIC_TFT |	/* General TFT panel */
 		LCD_CFG_MODE_TFT_24BIT |	/* output 24bpp */
+	        LCD_CFG_DEP |
 		LCD_CFG_PCP |	/* Pixel clock polarity: falling edge */
 		LCD_CFG_HSP |	/* Hsync polarity: active low */
 		LCD_CFG_VSP,	/* Vsync polarity: leading edge is falling edge */
 	/* Took timing parameters from typical in datasheet
 	bw,  bh,  dw,  dh,  fclk, hsw, vsw, elw, blw, efw, bfw */
-	640, 480, 640, 480, 60,  2,   2,   44, 144, 16,   14,
+        640, 480, 640, 480, 60,   90,  10,  116, 144, 5,  15,
+        /* (640+144+116)*(480+15+5)*60 = 27MHz */
 };
 #endif
 struct jzfb {
@@ -740,11 +742,11 @@ static void jzfb_ipu_configure(struct jzfb *jzfb)
 		outputH = fb->var.yres * numH / denomH;
 		outputW = fb->var.xres_virtual * numW / denomW;
 #ifdef CONFIG_USE_VGA_HACK
-if (fb->var.xres == 368)
-{
-printk("TONY's magic\n");
-outputW -= 64;
-}
+                if (fb->var.xres == 368)
+                  {
+                    printk("TONY's magic\n");
+                    outputW -= 64;
+                  }
 #endif
 		/*
 		 * If we are upscaling horizontally, the last columns of pixels
