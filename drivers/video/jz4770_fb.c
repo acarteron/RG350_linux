@@ -114,7 +114,7 @@ static const struct jz_panel jz4770_lcd_panel = {
 		LCD_CFG_VSP,	/* Vsync polarity: leading edge is falling edge */
 	/* Took timing parameters from typical in datasheet
 	bw,  bh,  dw,  dh,  fclk, hsw, vsw, elw, blw, efw, bfw */
-        640, 480, 640, 480, 60,   90,  10,  116, 144, 5,  15,
+        640, 480, 640, 480, 60,   2,  2,  116, 144, 5,  15,
         /* (640+144+116)*(480+15+5)*60 = 27MHz */
 };
 #endif
