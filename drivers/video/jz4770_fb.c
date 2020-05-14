@@ -113,19 +113,11 @@ static const struct jz_panel jz4770_lcd_panel = {
 	.cfg = LCD_CFG_LCDPIN_LCD | LCD_CFG_RECOVER |	/* Underrun recover */
 		LCD_CFG_MODE_GENERIC_TFT |	/* General TFT panel */
 		LCD_CFG_MODE_TFT_24BIT |	/* output 24bpp */
-	LCD_CFG_DEP, // |
-		/* LCD_CFG_PCP |	/\* Pixel clock polarity: falling edge *\/ */
-		/* LCD_CFG_HSP |	/\* Hsync polarity: active low *\/ */
-		/* LCD_CFG_VSP,	/\* Vsync polarity: leading edge is falling edge *\/ */
-	/* Took timing parameters from typical in datasheet
-	bw,  bh,  dw,  dh,  fclk, hsw, vsw, elw, blw, efw, bfw */
-        /* 640, 480, 640, 480, 60,   2,  2,  50, 60, 50,  70, */
+	        LCD_CFG_DEP, 
+	/* bw,  bh,  dw,  dh,  fclk, hsw, vsw, elw, blw, efw, bfw */
 	/* 640, 480, 640, 480, 60,   2,  2,  116, 144, 5,  15, */
 		/* 640, 480, 640, 480, 63.61, 13, 1, 14, 84, 4, 24, */
-
-	640, 480, 640, 480, 63.61, 13, 1, 14, 84, 4, 24,
-        /* (640+144+116)*(480+15+5)*60 = 27MHz */
-	/* (640+50+60)*(480+50+70)*60 = 27MHz */
+	640, 480, 640, 480, 63.61, 13, 1, 16, 144, 4, 24,
 };
 #endif
 struct jzfb {
